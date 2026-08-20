@@ -1,0 +1,10 @@
+API Flow is a compact mobile API client for testing HTTP endpoints without a desktop.
+
+• Send GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS requests
+• Add headers, query parameters, and raw request bodies
+• Inspect response status, timing, headers, and body
+• Save local request collections and recent history
+• Use a reusable {{base_url}} environment variable
+• Choose light, dark, or system appearance
+
+API Flow has no accounts, ads, analytics, or developer-operated backend. Requests are only sent when you choose an endpoint and tap Send.
