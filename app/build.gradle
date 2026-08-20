@@ -1,0 +1,56 @@
+import java.util.Properties
+
+plugins {
+    id 'com.android.application'
+}
+
+def releaseProperties = new Properties()
+def releasePropertiesFile = rootProject.file('keystore.properties')
+def hasReleaseSigning = releasePropertiesFile.exists()
+if (hasReleaseSigning) {
+    releasePropertiesFile.withInputStream { releaseProperties.load(it) }
+}
+
+android {
+    namespace 'com.apiflow.mobile'
+    compileSdk 36
+
+    defaultConfig {
+        // Choose and reserve this ID before the first store upload. It cannot be changed later.
+        applicationId 'com.apiflow.mobile'
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    signingConfigs {
+        if (hasReleaseSigning) {
+            release {
+                storeFile rootProject.file(releaseProperties['storeFile'])
+                storePassword releaseProperties['storePassword']
+                keyAlias releaseProperties['keyAlias']
+                keyPassword releaseProperties['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
