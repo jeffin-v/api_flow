@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ink">#0B1220</color>
+    <color name="canvas">#F6F8FC</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="line">#DCE3EF</color>
+    <color name="blue">#2563EB</color>
+    <color name="blue_dark">#173EA5</color>
+    <color name="mint">#047857</color>
+    <color name="muted">#64748B</color>
+    <color name="danger">#B42318</color>
+</resources>
