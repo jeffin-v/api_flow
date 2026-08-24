@@ -1,0 +1,30 @@
+name: Materialize API Flow v1.0.2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .release-staging.tar.gz.b64
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply audited release source
+        shell: bash
+        run: |
+          set -euo pipefail
+          base64 --decode .release-staging.tar.gz.b64 > /tmp/api-flow-v1.0.2-source.tgz
+          tar -xzf /tmp/api-flow-v1.0.2-source.tgz -C .
+          rm -r app/src/main/java/com fdroid
+          rm .release-staging.tar.gz.b64 .github/workflows/materialize-release.yml
+          git config user.name "Jeffin Vinod K"
+          git config user.email "jeffin@posteo.net"
+          git add -A
+          git commit -m "Prepare API Flow 1.0.2"
+          git push origin HEAD:main
