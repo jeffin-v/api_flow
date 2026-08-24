@@ -1,4 +1,4 @@
-package com.apiflow.mobile;
+package io.github.jeffin_v.apiflow;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -469,7 +469,7 @@ public class MainActivity extends Activity {
             connection.setConnectTimeout(15_000);
             connection.setReadTimeout(30_000);
             connection.setInstanceFollowRedirects(true);
-            connection.setRequestProperty("User-Agent", "API-Flow-Android/1.0");
+            connection.setRequestProperty("User-Agent", "API-Flow-Android/1.0.2");
             boolean hasContentType = false;
             for (KeyValue header : request.headers) {
                 connection.addRequestProperty(header.key, header.value);
@@ -746,12 +746,12 @@ public class MainActivity extends Activity {
         LinearLayout content = dialogContent();
         TextView intro = text("API Flow privacy summary", 15, INK, true);
         content.addView(intro);
-        content.addView(text("Effective version: 1.0.0", 12, MUTED, false), margins(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0, 3, 0, 14));
+        content.addView(text("Effective version: 1.0.2", 12, MUTED, false), margins(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0, 3, 0, 14));
 
         content.addView(policyBlock("Stored on this device", "Saved requests, request history, URLs, headers, query parameters, and request bodies are stored in Android app-private storage. Device backups are disabled. Avoid saving long-lived secrets in collections."));
         content.addView(policyBlock("Sent only when you choose", "When you tap Send, API Flow sends the request data you entered directly to the endpoint URL you selected. The app does not operate a relay service."), margins(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0, 12, 0, 0));
         content.addView(policyBlock("No developer-side collection", "This build has no account system, advertising, analytics, tracking SDK, or developer-operated backend. It does not send your saved workspace to the publisher."), margins(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0, 12, 0, 0));
-        content.addView(policyBlock("Your controls", "Use Collections and History to remove individual saved entries. Clearing Android app storage removes all locally stored API Flow data."), margins(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0, 12, 0, 0));
+        content.addView(policyBlock("Your controls", "Delete saved requests individually from Collections, or clear the complete request history. Clearing Android app storage removes all locally stored API Flow data."), margins(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0, 12, 0, 0));
         content.addView(text("Publisher: Jeffin Vinod K · Support: jeffin@posteo.net", 12, MUTED, false), margins(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 0, 16, 0, 0));
         showDialog("Privacy policy", content);
     }

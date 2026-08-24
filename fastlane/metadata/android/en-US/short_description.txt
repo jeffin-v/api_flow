@@ -1,1 +1,1 @@
-A focused mobile workspace for testing HTTP APIs.
+A focused mobile workspace for testing HTTP APIs

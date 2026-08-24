@@ -1,6 +1,6 @@
 # API Flow Privacy Policy
 
-**Effective date:** 21 August 2026  
+**Effective date:** 24 August 2026  
 **Publisher:** Jeffin Vinod K  
 **Contact:** [jeffin@posteo.net](mailto:jeffin@posteo.net)
 

@@ -26,7 +26,7 @@ or:
 ./scripts/build-apk.sh
 ```
 
-The installable development APK is written to `dist/api-flow-debug.apk`. The debug application ID is `com.apiflow.mobile.debug`, so it can coexist with a release build.
+The installable development APK is written to `dist/api-flow-debug.apk`. The debug application ID is `io.github.jeffin_v.apiflow.debug`, so it can coexist with a release build.
 
 ## Google Play release
 
@@ -51,7 +51,7 @@ The release AAB is written to `dist/api-flow-release.aab`. Enrol the app in Play
 
 ## F-Droid
 
-F-Droid publishes builds it creates from public source; it does not accept this project's APK or AAB. The completed [submission metadata](fdroid/com.apiflow.mobile.yml), release tag, Fastlane metadata, and [submission instructions](fdroid/README.md) are included. The F-Droid maintainers must review and accept the submission. The public source and versioned privacy policy are hosted at [github.com/jeffin-v/api_flow](https://github.com/jeffin-v/api_flow).
+The upstream Fastlane metadata and every tagged release are kept in this repository. API Flow uses F-Droid's reproducible-build flow: F-Droid independently rebuilds the tagged source and publishes the developer-signed APK only when it verifies as identical apart from its signature. The public source and privacy policy are hosted at [github.com/jeffin-v/api_flow](https://github.com/jeffin-v/api_flow).
 
 ## Security notes
 

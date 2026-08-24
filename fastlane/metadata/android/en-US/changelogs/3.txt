@@ -1,0 +1,1 @@
+Moved to the permanent io.github.jeffin_v.apiflow application ID, corrected privacy and release metadata, and added complete F-Droid listing assets. Release APKs are now built from the exact public Git tag for reproducible verification.

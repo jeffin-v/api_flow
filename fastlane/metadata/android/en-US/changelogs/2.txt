@@ -1,0 +1,1 @@
+Removed Android dependency metadata from release artifacts for F-Droid compatibility. No user-facing behavior changes.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.2 — 2026-08-24
+
+- Moved to the permanent `io.github.jeffin_v.apiflow` application ID.
+- Corrected the in-app privacy copy and release metadata.
+- Added complete F-Droid icon, screenshot, and per-release changelog metadata.
+- Reworked the release procedure so signed APKs are built from the exact public tag.
+
 ## 1.0.1 — 2026-08-24
 
 - Removed Android dependency metadata from release artifacts for F-Droid compatibility.
