@@ -836,7 +836,25 @@ public class MainActivity extends Activity {
     }
 
     private String expandVariables(String input) {
-        return input.replace("{{base_url}}", prefs.getString(KEY_BASE_URL, ""));
+        String withBase = input.replace("{{base_url}}", prefs.getString(KEY_BASE_URL, ""));
+
+        // If user enters just a path (e.g., "/v1/users"), auto-prepend base_url
+        String normalized = withBase.toLowerCase(Locale.US);
+        if (!normalized.startsWith("http://") && !normalized.startsWith("https://")) {
+            String baseUrl = prefs.getString(KEY_BASE_URL, "").trim();
+            if (!baseUrl.isEmpty()) {
+                // Remove trailing slash from base URL to avoid double slashes
+                if (baseUrl.endsWith("/")) {
+                    baseUrl = baseUrl.substring(0, baseUrl.length() - 1);
+                }
+                // Ensure path starts with /
+                if (!withBase.startsWith("/")) {
+                    withBase = "/" + withBase;
+                }
+                withBase = baseUrl + withBase;
+            }
+        }
+        return withBase;
     }
 
     private String urlEncode(String value) {

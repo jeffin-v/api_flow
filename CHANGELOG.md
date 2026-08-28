@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 — 2026-08-29
+
+- Fixed the base URL environment variable so a request path entered on its own is joined to the saved base URL instead of being rejected.
+
 ## 1.0.2 — 2026-08-24
 
 - Moved to the permanent `io.github.jeffin_v.apiflow` application ID.

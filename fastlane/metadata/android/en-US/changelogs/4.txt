@@ -1,0 +1,1 @@
+Fixed the base URL environment variable: a request path entered on its own is now joined to the saved base URL instead of being rejected.
