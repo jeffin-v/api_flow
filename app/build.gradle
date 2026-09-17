@@ -19,8 +19,8 @@ android {
         applicationId 'io.github.jeffin_v.apiflow'
         minSdk 26
         targetSdk 36
-        versionCode 4
-        versionName '1.0.3'
+        versionCode 5
+        versionName '1.0.4'
     }
 
     signingConfigs {
@@ -53,8 +53,16 @@ android {
         includeInBundle = false
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
 }

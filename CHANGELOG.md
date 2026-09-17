@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4 — 2026-09-18
+
+- Fixed saved requests duplicating query parameters when loaded and sent again.
+- Derived the request User-Agent and privacy summary version from the app build version.
+
 ## 1.0.3 — 2026-08-29
 
 - Fixed the base URL environment variable so a request path entered on its own is joined to the saved base URL instead of being rejected.

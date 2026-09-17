@@ -1,0 +1,1 @@
+Fixed duplicate query parameters when resending saved requests. The User-Agent and privacy summary now always show the installed app version.
